@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qbn3_!olsmlxtx4(ep++%oc6tr)=&z&b)r85%14^#z3b$=8$0d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['rafiq8project.herokuapp.com', '127.0.0.1', ]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rafiq8project.herokuapp.com',  'www.rafiqweb.com', 'rafiqweb.com']
 
 
 # Application definition
