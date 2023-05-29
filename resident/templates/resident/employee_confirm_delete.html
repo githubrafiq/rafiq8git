@@ -1,0 +1,12 @@
+{% extends 'resident/base.html' %}
+{% block title %} {% endblock %}
+{% block content %}
+<form method="POSt">
+  <h1>Are you sure you want to delete the post "{{object.title}}"</h1>
+    {% csrf_token %}
+
+    <input class="btn btn-outline-danger" type="submit" value="confirm delete">
+
+    <a href="{% url 'post-detail' object.id %}" class="btn btn-outline-success">Cancel</a>
+</form>
+{% endblock %}
