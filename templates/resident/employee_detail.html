@@ -1,0 +1,14 @@
+{% extends 'resident/base.html' %}
+{% block content %}
+    <div class="card" style="width: 18rem;">
+    <img src="{{object.image.url}}" class="card-img-top" alt="{{object.image.url}}">
+    <div class="card-body">
+      <h5 class="card-title">{{object.author}}</h5>
+    <img src="{{object.profile_pic.url}}" class="card-img-top" alt="{{object.author}}">
+        {% if object.author == user %}
+              <a href="{% url 'post-update' object.id %}" class="btn btn-outline-primary">Update</a>
+              <a href="{% url 'post-delete' object.id %}" class="btn btn-outline-warning">Delete</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

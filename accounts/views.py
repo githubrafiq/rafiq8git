@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 from django.contrib import messages
@@ -42,3 +43,8 @@ def logout(request):
         return redirect('home')
     return render(request, 'accounts/logout.html')
 
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> master
