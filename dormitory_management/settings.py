@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rafiq8project.herokuapp.com',  'www.
 # Application definition
 
 INSTALLED_APPS = [
-    'resident.apps.ResidentConfig',
     'accounts.apps.AccountsConfig',
 
     'django.contrib.admin',
@@ -137,7 +136,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticfilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
 
+LOGOUT_REDIRECT_URL = '/'
 
-
-LOGOUT_REDIRECT_URL = 'home'
 
