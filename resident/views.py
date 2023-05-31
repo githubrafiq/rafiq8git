@@ -54,8 +54,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
-<<<<<<< HEAD
-    return render(request, 'index.html', context)
-=======
->>>>>>> master
