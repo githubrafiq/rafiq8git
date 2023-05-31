@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-qbn3_!olsmlxtx4(ep++%oc6tr)=&z&b)r85%14^#z3b$=8$0d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rafiq8project.herokuapp.com',  'www.rafiqweb.com', 'rafiqweb.com']
 
@@ -34,6 +34,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rafiq8project.herokuapp.com',  'www.
 
 INSTALLED_APPS = [
     'resident.apps.ResidentConfig',
+    'accounts.apps.AccountsConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,7 +61,7 @@ ROOT_URLCONF = 'dormitory_management.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +136,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticfilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
+
+
+LOGOUT_REDIRECT_URL = 'home'

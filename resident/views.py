@@ -7,4 +7,4 @@ def dashboard(request):
         'employees': Employee.objects.all()
     }
 
-    return render(request, 'resident/index.html', context)
+    return render(request, 'index.html', context)
