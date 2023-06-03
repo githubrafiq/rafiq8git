@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
-{% for post in posts %}
-<div class="text-center">
-    <h2>{{post.title}}</h2>
-    <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
-</div>
-{% endfor %}
+    {% if posts %}
+        {% for post in posts %}
+        <div class="text-center">
+            <h2>{{post.title}}</h2>
+            <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
+        </div>
+        {% endfor %}
+    {% else %}
+    <h1>Post coming soon</h1>
+    {% endif %}
 
 {% endblock %}
