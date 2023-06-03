@@ -5,8 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 
 # Create your views here.
-def home(request):
-    return render(request, 'home.html')
+
 
 def profile(request):
     return render(request, 'accounts/profile.html')

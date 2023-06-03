@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'rafiq8project.herokuapp.com',  'www.
 
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
+    'blog.apps.BlogConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
