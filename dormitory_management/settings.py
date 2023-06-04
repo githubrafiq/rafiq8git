@@ -81,17 +81,28 @@ WSGI_APPLICATION = 'dormitory_management.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dormdb',
+        'USER': 'postgres',
+        'PASSWORD': '12345678',
+        'HOST': 'database-3.cu16bj1ivdas.us-east-1.rds.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -134,7 +145,7 @@ STATIC_URL = 'static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = 'meida/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticfilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticfilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -144,3 +155,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGOUT_REDIRECT_URL = '/'
 
 django_heroku.settings(locals())
+
+# STORAGES = {
+#     "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
+#     "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}
+# }
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+AWS_ACCESS_KEY_ID = 'AKIAVX5RGJGXV3AG74XS'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'dorm8bucket8'
+AWS_QUERYSTRING_AUTH = False
+
