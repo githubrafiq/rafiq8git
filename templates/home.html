@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+<h1>My Photo Album</h1>
     {% if posts %}
         {% for post in posts %}
-        <div class="text-center">
+        <div style="width: 25%; padding: 2px; box-sizing: border-box; float: left">
             <h2>{{post.title}}</h2>
-            <img src="{{post.image.url}}" alt="{{post.title}}" width="50%">
+            <img src="{{post.image.url}}" alt="{{post.title}}" width="100%">
         </div>
         {% endfor %}
     {% else %}
