@@ -2,7 +2,9 @@ from django.shortcuts import render
 from .models import Post
 from django.views.generic import ListView
 
-# Create your views here.
+
+def home(request):
+    return render(request, 'index.html')
 
 
 class PostListView(ListView):
